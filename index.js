@@ -6,12 +6,8 @@ import { Server } from 'socket.io';
 
 import { publisher, subscriber, redis } from './redis-connection.js';
 
-const CHECKBOX_SIZE = 100;
+const CHECKBOX_SIZE = 1000;
 const CHECKBOX_STATE_KEY = 'checkbox-state';
-
-const state = {
-    checkboxes: new Array(CHECKBOX_SIZE).fill(false),
-}
 
 async function main() {
     const app = express();

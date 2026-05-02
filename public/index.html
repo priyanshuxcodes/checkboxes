@@ -95,7 +95,10 @@
             }
         });
 
-        window.addEventListener('load', async() => {
+        async function fetchState() {
+            while(container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
             const response = await fetch('/checkboxes', { method: 'GET'});
             const data = await response.json();
 
@@ -105,14 +108,20 @@
                     checkbox.type = 'checkbox';
                     checkbox.id = `checkbox-${index}`;
                     checkbox.checked = serverValue;
+
                     checkbox.addEventListener('change', () => {
                         const checked = event.target.checked;
                         // console.log('checkboxState', { index, checked });
                         socket.emit('client:checkbox:change', { index, checked });
+                        fetchState();
                     });
                     container.appendChild(checkbox);
                 });
             }
+        }
+
+        window.addEventListener('load', async() => {
+            await fetchState();
         });
     </script>
 </body>
