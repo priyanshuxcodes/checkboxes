@@ -67,42 +67,9 @@ Imagine a grid of **1,000,000 checkboxes** where:
 ```bash
 git clone https://github.com/your-username/1-million-checkboxes.git
 cd 1-million-checkboxes
-2. Install dependencies
+```
+
+### 2. Install dependencies
+```bash
 npm install
-3. Start Redis
-
-Make sure Redis is running locally:
-
-redis-server
-4. Start the server
-npm start
-5. Open in browser
-http://localhost:3000
-📡 WebSocket Events
-Client → Server
-
-toggle_checkbox
-
-{
-  "id": 12345,
-  "checked": true
-}
-Server → Clients
-
-update_checkbox
-
-{
-  "id": 12345,
-  "checked": true
-}
-🚧 Challenges Solved
-Handling high-frequency updates
-Maintaining consistent state across clients
-Efficiently managing 1M checkbox data
-Optimizing DOM rendering for performance
-💡 Future Improvements
-Virtualized rendering for better performance
-User cursor tracking
-Heatmap of most-clicked checkboxes
-Authentication system
-Horizontal scaling with Redis Pub/Sub
+```
