@@ -60,16 +60,5 @@ Imagine a grid of **1,000,000 checkboxes** where:
 
 ---
 
-## 🛠️ Setup Instructions
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/1-million-checkboxes.git
-cd 1-million-checkboxes
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
+## Live Link
+(Checkboxes)[https://checkboxes-hejg.onrender.com]
